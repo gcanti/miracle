@@ -1,0 +1,214 @@
+@import "config.less";
+
+/*
+    ----------------------
+    mixins
+    ----------------------
+*/
+
+.clearfix () {
+    zoom: 1;
+    &:before, &:after {content: ""; display: table; zoom: 1;}
+    &:after {clear: both;}
+}
+
+/*
+    ----------------------
+    responsive grid system
+    ----------------------
+*/
+
+// ---------
+// grid
+// ---------
+
+// per i browser che non supportano @media la larghezza rimane fissa
+// per i browser che supportano @media il contenitore diventa fluido e può restringersi
+// @media support:
+// - IE9+
+// - FF3.5+
+// - Opera9.5+
+// - all
+.container {
+    width: @container-max-width;
+    margin: 0 auto;
+    padding: 0 @container-padding; 		// evita che il contenuto sia attaccato alla cromatura
+    @media all and (min-width: 1px) { 	// test for @media support
+        & {
+            width: auto;
+            max-width: @container-max-width;
+        }
+    }
+}
+
+.cols {
+    .clearfix;
+}
+.cell {
+    padding: @container-padding;
+}
+// responsive images
+img {
+    width: 100%;
+    height: auto; // evita al browser di ricalcolare la height ogni volta che ridimensiono 
+    //-ms-interpolation-mode: bicubic; // Improve image quality when scaled in IE 7
+}
+
+
+// large è la classe base per le colonne, viene usata come unica classe
+// dai browser che non supportano @media oppure dai browser avanzati
+// in modalità desktop
+
+.large-5,
+.large-10,
+.large-15,
+.large-20,
+.large-30,
+.large-35,
+.large-40,
+.large-45,
+.large-50,
+.large-55,
+.large-60,
+.large-65,
+.large-70,
+.large-80,
+.large-85,
+.large-90,
+.large-100,
+.large-25,
+.large-33,
+.large-66 {
+    float: left;
+}
+
+.large-5 {width: 5%;}
+.large-10 {width: 10%;}
+.large-15 {width: 15%;}
+.large-20 {width: 20%;}
+.large-30 {width: 30%;}
+.large-35 {width: 35%;}
+.large-40 {width: 40%;}
+.large-45 {width: 45%;}
+.large-50 {width: 50%;}
+.large-55 {width: 55%;}
+.large-60 {width: 60%;}
+.large-65 {width: 65%;}
+.large-70 {width: 70%;}
+.large-85 {width: 85%;}
+.large-80 {width: 80%;}
+.large-90 {width: 90%;}
+.large-100 {width: 100%;}
+.large-25 {width: 25%;}
+.large-33 {width: 33.3333333333%;}
+.large-66 {width: 66.6666666667%;}
+.large-16 {width: 16.6666666667%;}
+
+.large-show {display: block;}
+.large-hide {display: none;}
+.large-pull-left {float: left;}
+.large-pull-right {float: right;}
+.large-row {
+    .clearfix;
+}
+.large-text-left {text-align: left;}
+.large-text-right {text-align: right;}
+.large-text-center {text-align: center;}
+
+// medium è la classe per le colonne usata dai browser avanzati
+// in modalità tablet
+
+@media all and (max-width: @medium-breakpoint) {
+    .medium-10,
+    .medium-20,
+    .medium-30,
+    .medium-40,
+    .medium-50,
+    .medium-60,
+    .medium-70,
+    .medium-80,
+    .medium-90,
+    .medium-100,
+	.medium-25,
+    .medium-33,
+    .medium-66 {
+        float: left;
+    }
+
+    .medium-10 {width: 10%;}
+    .medium-20 {width: 20%;}
+    .medium-30 {width: 30%;}
+    .medium-40 {width: 40%;}
+    .medium-50 {width: 50%;}
+    .medium-60 {width: 60%;}
+    .medium-70 {width: 70%;}
+    .medium-80 {width: 80%;}
+    .medium-90 {width: 90%;}
+    .medium-100 {width: 100%;}
+	.medium-25 {width: 25%;}
+    .medium-33 {width: 33.3333333333%;}
+    .medium-66 {width: 66.6666666667%;}
+    .medium-16 {width: 16.6666666667%;}
+
+    .medium-show {display: block;}
+    .medium-hide {display: none;}
+    .medium-pull-left {float: left;}
+    .medium-pull-right {float: right;}
+    .medium-pull-none {float: none;}
+    .medium-row {
+        .clearfix;
+    }
+    .medium-text-left {text-align: left;}
+    .medium-text-right {text-align: right;}
+    .medium-text-center {text-align: center;}
+
+}
+
+// medium è la classe per le colonne usata dai browser avanzati
+// in modalità mobile
+
+@media all and (max-width: @small-breakpoint) {
+    .small-10,
+    .small-20,
+    .small-30,
+    .small-40,
+    .small-50,
+    .small-60,
+    .small-70,
+    .small-80,
+    .small-90,
+    .small-100,
+	.small-25,
+    .small-33,
+    .small-66 {
+        float: left;
+    }
+
+    .small-10 {width: 10%;}
+    .small-20 {width: 20%;}
+    .small-30 {width: 30%;}
+    .small-40 {width: 40%;}
+    .small-50 {width: 50%;}
+    .small-60 {width: 60%;}
+    .small-70 {width: 70%;}
+    .small-80 {width: 80%;}
+    .small-90 {width: 90%;}
+    .small-100 {width: 100%;}
+	.small-25 {width: 25%;}
+    .small-33 {width: 33.3333333333%;}
+    .small-66 {width: 66.6666666667%;}
+    .small-16 {width: 16.6666666667%;}
+
+    .small-show {display: block;}
+    .small-hide {display: none;}
+    .small-pull-left {float: left;}
+    .small-pull-right {float: right;}
+    .small-pull-none {float: none;}
+    .small-row {
+        .clearfix;
+    }
+    .small-text-left {text-align: left;}
+    .small-text-right {text-align: right;}
+    .small-text-center {text-align: center;}
+}
+
