@@ -1,214 +1,124 @@
-@import "config.less";
-
-/*
-    ----------------------
-    mixins
-    ----------------------
-*/
-
-.clearfix () {
+.miracle-clearfix () {
     zoom: 1;
     &:before, &:after {content: ""; display: table; zoom: 1;}
     &:after {clear: both;}
 }
 
-/*
-    ----------------------
-    responsive grid system
-    ----------------------
-*/
-
-// ---------
-// grid
-// ---------
-
-// per i browser che non supportano @media la larghezza rimane fissa
-// per i browser che supportano @media il contenitore diventa fluido e può restringersi
-// @media support:
-// - IE9+
-// - FF3.5+
-// - Opera9.5+
-// - all
-.container {
-    width: @container-max-width;
-    margin: 0 auto;
-    padding: 0 @container-padding; 		// evita che il contenuto sia attaccato alla cromatura
-    @media all and (min-width: 1px) { 	// test for @media support
-        & {
-            width: auto;
-            max-width: @container-max-width;
+.miracle-container-max-width (@max-width) {
+    // costruisce un contenitore a larghezza massima fluido per i browser che supportano @media
+    // e a larghezza fissa per i browser che NON supportano @media
+    // la larghezza finale del container è: @max-width + (2 * @gutter)
+    .container {
+        width: @max-width;
+        margin: 0 auto; // centra il container
+        @media all and (min-width: 1px) {
+            & {
+                width: auto;
+                max-width: @max-width;
+            }
         }
     }
 }
 
-.cols {
-    .clearfix;
-}
-.cell {
-    padding: @container-padding;
-}
-// responsive images
-img {
-    width: 100%;
-    height: auto; // evita al browser di ricalcolare la height ogni volta che ridimensiono 
-    //-ms-interpolation-mode: bicubic; // Improve image quality when scaled in IE 7
-}
+.miracle-default (@name, @gutter) {
 
+    .container {
+        padding: @gutter; // evita che il contenuto sia attaccato alla cromatura
+    }
 
-// large è la classe base per le colonne, viene usata come unica classe
-// dai browser che non supportano @media oppure dai browser avanzati
-// in modalità desktop
+    .cell {
+        margin: @gutter;
+    }
 
-.large-5,
-.large-10,
-.large-15,
-.large-20,
-.large-30,
-.large-35,
-.large-40,
-.large-45,
-.large-50,
-.large-55,
-.large-60,
-.large-65,
-.large-70,
-.large-80,
-.large-85,
-.large-90,
-.large-100,
-.large-25,
-.large-33,
-.large-66 {
-    float: left;
-}
+    .row-@{name} {
+        .miracle-clearfix;
+    }
 
-.large-5 {width: 5%;}
-.large-10 {width: 10%;}
-.large-15 {width: 15%;}
-.large-20 {width: 20%;}
-.large-30 {width: 30%;}
-.large-35 {width: 35%;}
-.large-40 {width: 40%;}
-.large-45 {width: 45%;}
-.large-50 {width: 50%;}
-.large-55 {width: 55%;}
-.large-60 {width: 60%;}
-.large-65 {width: 65%;}
-.large-70 {width: 70%;}
-.large-85 {width: 85%;}
-.large-80 {width: 80%;}
-.large-90 {width: 90%;}
-.large-100 {width: 100%;}
-.large-25 {width: 25%;}
-.large-33 {width: 33.3333333333%;}
-.large-66 {width: 66.6666666667%;}
-.large-16 {width: 16.6666666667%;}
-
-.large-show {display: block;}
-.large-hide {display: none;}
-.large-pull-left {float: left;}
-.large-pull-right {float: right;}
-.large-row {
-    .clearfix;
-}
-.large-text-left {text-align: left;}
-.large-text-right {text-align: right;}
-.large-text-center {text-align: center;}
-
-// medium è la classe per le colonne usata dai browser avanzati
-// in modalità tablet
-
-@media all and (max-width: @medium-breakpoint) {
-    .medium-10,
-    .medium-20,
-    .medium-30,
-    .medium-40,
-    .medium-50,
-    .medium-60,
-    .medium-70,
-    .medium-80,
-    .medium-90,
-    .medium-100,
-	.medium-25,
-    .medium-33,
-    .medium-66 {
+    .@{name}-5,
+    .@{name}-8,  // 1/12
+    .@{name}-10, 
+    .@{name}-15,
+    .@{name}-16, // 1/6
+    .@{name}-20, 
+    .@{name}-25, // 1/4
+    .@{name}-30, 
+    .@{name}-33, // 1/3
+    .@{name}-35,
+    .@{name}-40, 
+    .@{name}-41, // 5/12 
+    .@{name}-45,
+    .@{name}-50, // 1/2
+    .@{name}-55,
+    .@{name}-58, // 7/12
+    .@{name}-60,
+    .@{name}-65,
+    .@{name}-66, // 2/3
+    .@{name}-70,
+    .@{name}-75, // 3/4
+    .@{name}-80,
+    .@{name}-83, // 5/6
+    .@{name}-85,
+    .@{name}-90,
+    .@{name}-91, // 11/12
+    .@{name}-95,
+    .@{name}-100 {
         float: left;
     }
 
-    .medium-10 {width: 10%;}
-    .medium-20 {width: 20%;}
-    .medium-30 {width: 30%;}
-    .medium-40 {width: 40%;}
-    .medium-50 {width: 50%;}
-    .medium-60 {width: 60%;}
-    .medium-70 {width: 70%;}
-    .medium-80 {width: 80%;}
-    .medium-90 {width: 90%;}
-    .medium-100 {width: 100%;}
-	.medium-25 {width: 25%;}
-    .medium-33 {width: 33.3333333333%;}
-    .medium-66 {width: 66.6666666667%;}
-    .medium-16 {width: 16.6666666667%;}
+    .@{name}-5 {width: 5%;}
+    .@{name}-8 {width: 8.3333333333%;}
+    .@{name}-10 {width: 10%;}
+    .@{name}-15 {width: 15%;}
+    .@{name}-16 {width: 16.6666666667%;}
+    .@{name}-20 {width: 20%;}
+    .@{name}-25 {width: 25%;}
+    .@{name}-30 {width: 30%;}
+    .@{name}-33 {width: 33.3333333333%;}
+    .@{name}-35 {width: 35%;}
+    .@{name}-40 {width: 40%;}
+    .@{name}-41 {width: 41.6666666667%;}
+    .@{name}-45 {width: 45%;}
+    .@{name}-50 {width: 50%;}
+    .@{name}-55 {width: 55%;}
+    .@{name}-58 {width: 58.3333333333%;}
+    .@{name}-60 {width: 60%;}
+    .@{name}-65 {width: 65%;}
+    .@{name}-66 {width: 66.6666666667%;}
+    .@{name}-70 {width: 70%;}
+    .@{name}-75 {width: 75%;}
+    .@{name}-85 {width: 85%;}
+    .@{name}-80 {width: 80%;}
+    .@{name}-83 {width: 83.3333333333%;}
+    .@{name}-90 {width: 90%;}
+    .@{name}-91 {width: 91.6666666667%;}
+    .@{name}-95 {width: 95%;}
+    .@{name}-100 {width: 100%;}
 
-    .medium-show {display: block;}
-    .medium-hide {display: none;}
-    .medium-pull-left {float: left;}
-    .medium-pull-right {float: right;}
-    .medium-pull-none {float: none;}
-    .medium-row {
-        .clearfix;
-    }
-    .medium-text-left {text-align: left;}
-    .medium-text-right {text-align: right;}
-    .medium-text-center {text-align: center;}
+    .@{name}-text-left {text-align: left;}
+    .@{name}-text-right {text-align: right;}
+    .@{name}-text-center {text-align: center;}
+
+    .@{name}-show {display: block;}
+    .@{name}-hide {display: none;}
+    .@{name}-visible {visibility: visible;}
+    .@{name}-invisible {visibility: hidden;}
+
+    .@{name}-pull-left {float: left;}
+    .@{name}-pull-right {float: right;}
 
 }
 
-// medium è la classe per le colonne usata dai browser avanzati
-// in modalità mobile
-
-@media all and (max-width: @small-breakpoint) {
-    .small-10,
-    .small-20,
-    .small-30,
-    .small-40,
-    .small-50,
-    .small-60,
-    .small-70,
-    .small-80,
-    .small-90,
-    .small-100,
-	.small-25,
-    .small-33,
-    .small-66 {
-        float: left;
+.miracle-breakpoint (@max-width, @name, @gutter) {
+    @media all and (max-width: @max-width) {
+        .miracle-default(@name, @gutter);
     }
+}    
 
-    .small-10 {width: 10%;}
-    .small-20 {width: 20%;}
-    .small-30 {width: 30%;}
-    .small-40 {width: 40%;}
-    .small-50 {width: 50%;}
-    .small-60 {width: 60%;}
-    .small-70 {width: 70%;}
-    .small-80 {width: 80%;}
-    .small-90 {width: 90%;}
-    .small-100 {width: 100%;}
-	.small-25 {width: 25%;}
-    .small-33 {width: 33.3333333333%;}
-    .small-66 {width: 66.6666666667%;}
-    .small-16 {width: 16.6666666667%;}
-
-    .small-show {display: block;}
-    .small-hide {display: none;}
-    .small-pull-left {float: left;}
-    .small-pull-right {float: right;}
-    .small-pull-none {float: none;}
-    .small-row {
-        .clearfix;
+.miracle-img-responsive () {
+    // rende fluide le immagini
+    img {
+        width: 100%;
+        height: auto; // evita al browser di ricalcolare la height ogni volta che ridimensiono 
     }
-    .small-text-left {text-align: left;}
-    .small-text-right {text-align: right;}
-    .small-text-center {text-align: center;}
 }
 

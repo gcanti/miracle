@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>miracle tutorial</title>
+        <link type="text/css" rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Grid system</h1>
+            <p>
+                miracle includes a responsive, fluid grid system that appropriately scales up to 12 columns (or 20 columns if needed) as the device or viewport size increases.
+                The stylesheet of this page is configured with
+            </p>
+            <pre>
+                <code>
+.miracle-container-max-width(940px);    // container max width (optional)
+.miracle-default(lg, 10px);             // desktops and unsupporting @media browsers (IE8)
+.miracle-breakpoint(768px, md, 5px);    // tablets
+.miracle-breakpoint(480px, sm, 2px);    // mobiles
+.miracle-img-responsive();              // (optional)
+                </code>
+            </pre>
+
+            <h2>12 columns</h2>
+            <div class="grid">
+                <div class="row-lg">
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-16"><div class="cell">*-16</div></div>
+                    <div class="lg-16"><div class="cell">*-16</div></div>
+                    <div class="lg-16"><div class="cell">*-16</div></div>
+                    <div class="lg-16"><div class="cell">*-16</div></div>
+                    <div class="lg-16"><div class="cell">*-16</div></div>
+                    <div class="lg-16"><div class="cell">*-16</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-33"><div class="cell">*-33</div></div>
+                    <div class="lg-33"><div class="cell">*-33</div></div>
+                    <div class="lg-33"><div class="cell">*-33</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-8"><div class="cell">*-8</div></div>
+                    <div class="lg-91"><div class="cell">*-91</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-16"><div class="cell">*-16</div></div>
+                    <div class="lg-83"><div class="cell">*-83</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-25"><div class="cell">*-25</div></div>
+                    <div class="lg-75"><div class="cell">*-75</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-33"><div class="cell">*-33</div></div>
+                    <div class="lg-66"><div class="cell">*-66</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-41"><div class="cell">*-41</div></div>
+                    <div class="lg-58"><div class="cell">*-58</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-50"><div class="cell">*-50</div></div>
+                    <div class="lg-50"><div class="cell">*-50</div></div>
+                </div>
+            </div>
+
+            <h2>20 columns</h2>
+            <div class="grid">
+                <div class="row-lg">
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-20"><div class="cell">*-20</div></div>
+                    <div class="lg-20"><div class="cell">*-20</div></div>
+                    <div class="lg-20"><div class="cell">*-20</div></div>
+                    <div class="lg-20"><div class="cell">*-20</div></div>
+                    <div class="lg-20"><div class="cell">*-20</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-25"><div class="cell">*-25</div></div>
+                    <div class="lg-25"><div class="cell">*-25</div></div>
+                    <div class="lg-25"><div class="cell">*-25</div></div>
+                    <div class="lg-25"><div class="cell">*-25</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-33"><div class="cell">*-33</div></div>
+                    <div class="lg-33"><div class="cell">*-33</div></div>
+                    <div class="lg-33"><div class="cell">*-33</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-5"><div class="cell">*-5</div></div>
+                    <div class="lg-95"><div class="cell">*-95</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-10"><div class="cell">*-10</div></div>
+                    <div class="lg-90"><div class="cell">*-90</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-15"><div class="cell">*-15</div></div>
+                    <div class="lg-85"><div class="cell">*-85</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-20"><div class="cell">*-20</div></div>
+                    <div class="lg-80"><div class="cell">*-80</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-25"><div class="cell">*-25</div></div>
+                    <div class="lg-75"><div class="cell">*-75</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-30"><div class="cell">*-30</div></div>
+                    <div class="lg-70"><div class="cell">*-70</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-35"><div class="cell">*-35</div></div>
+                    <div class="lg-65"><div class="cell">*-65</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-40"><div class="cell">*-40</div></div>
+                    <div class="lg-60"><div class="cell">*-60</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-45"><div class="cell">*-45</div></div>
+                    <div class="lg-55"><div class="cell">*-55</div></div>
+                </div>
+                <div class="row-lg">
+                    <div class="lg-50"><div class="cell">*-50</div></div>
+                    <div class="lg-50"><div class="cell">*-50</div></div>
+                </div>
+            </div>
+
+            <h1>Alignment classes</h1>
+            <p>Easily realign text to components with text alignment classes <code>*-text-left, *-text-center, *-text-right</code>.</p>
+            <div class="lg-text-right md-text-center sm-text-left">
+                <div class="cell">
+                    lg-text-right md-text-center sm-text-left
+                </div>
+            </div>
+
+            <h1>Showing and hiding content</h1>
+            <p>
+                Force an element to be shown or hidden with the use of <code>.*-show</code> and <code>.*-hide</code> classes.
+                Force an element to be visible or invisible with the use of <code>.*-visible</code> and <code>.*-invisible</code> classes.
+            </p>
+            <div class="row-lg">
+                <div class="lg-33 lg-show md-hide sm-hide"><div class="cell">lg-show md-hide sm-hide</div></div>
+                <div class="lg-33 lg-hide md-show sm-hide"><div class="cell">lg-hide md-show sm-hide</div></div>
+                <div class="lg-33 lg-hide md-hide sm-show"><div class="cell">lg-hide md-hide sm-show</div></div>
+            </div>
+            <div class="row-lg">
+                <div class="lg-33 lg-visible md-invisible sm-invisible"><div class="cell">lg-visible md-invisible sm-invisible</div></div>
+                <div class="lg-33 lg-invisible md-visible sm-invisible"><div class="cell">lg-invisible md-visible sm-invisible</div></div>
+                <div class="lg-33 lg-invisible md-invisible sm-visible"><div class="cell">lg-invisible md-invisible sm-visible</div></div>
+            </div>
+
+            <h1>Quick floats</h1>
+            <p>Float an element to the left or right with a pull classese <code>*-pull-left, *-pull-right</code></p>
+            <div class="row-lg">
+                <div class="lg-33 lg-pull-right md-pull-left"><div class="cell">lg-pull-right md-pull-left</div></div>
+                <div class="lg-33 lg-pull-left md-pull-right"><div class="cell">lg-pull-left md-pull-right</div></div>
+            </div>
+
+            <h1>Responsive images</h1>
+            <p>Turn all images responsive by calling <code>.miracle-img-responsive()</code></p>
+
+        </div>
+    </body>
+</html>
