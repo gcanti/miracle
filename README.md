@@ -1,14 +1,14 @@
-# miracle.less
+# miracle
 
-Mini fluid responsive css library.
+Mini fluid responsive less library.
+
 miracle includes a responsive, fluid grid system that appropriately scales up to 12 columns (or 20 columns if needed) as the device or viewport size increases.
 Columns width are defined by percentages.
 
-Basic setup
+## Basic setup
 
     /* mystyle.less */
     @import "miracle.less";
-
     .miracle-container-max-width(940px);    // container max width (optional)
     .miracle-default(lg, 10px);             // desktops and unsupporting @media browsers (IE8)
     .miracle-breakpoint(768px, md, 5px);    // tablets
@@ -32,28 +32,28 @@ Basic setup
         </body>
     </html>
 
-# mixins
+## mixins
 
-## .miracle-container-max-width (@max-width)
+### .miracle-container-max-width (@max-width)
 
 Set the container max width for supported browsers that support @media.
 Browsers that doesn't support @media the container width is fixed.  
 
-## miracle-default (@name, @gutter)
+### miracle-default (@name, @gutter)
 
 Set the default grid system classes for large devices (desktops) and unsupporting @media browsers (IE8).
 All columns classes follow the pattern `@name-<percentage>`.
 
-## .miracle-breakpoint (@max-width, @name, @gutter)
+### .miracle-breakpoint (@max-width, @name, @gutter)
 
 Set the grid system classes for devices with viewport width up `@max-width`.
 All columns classes follow the pattern `@name-<percentage>`.
 
-## .miracle-img-responsive ()
+### .miracle-img-responsive ()
 
 Turn all images responsive.
 
-# Copyright & License
+## Copyright & License
 
 Copyright (C) 2014 Giulio Canti - Released under the MIT License.
 
