@@ -1,6 +1,6 @@
 # miracle
 
-Mini fluid responsive less library.
+Mini fluid responsive less library
 
 miracle includes a responsive, fluid grid system that appropriately scales up to 12 columns (or 20 columns if needed) as the device or viewport size increases.
 Columns width are defined by percentages.
